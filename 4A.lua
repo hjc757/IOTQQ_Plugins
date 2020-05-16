@@ -14,7 +14,7 @@ if string.find(data.Content, "真彩色") then --发送真彩色获取风云4A�
         )
         local html = response.body
         local str = html:gsub("/medium","") --从返回包体中替换掉medium图片路径，转为原文件
-		    local image = json.decode(str) --反序列化json
+	local image = json.decode(str) --反序列化json
 		ApiRet =
             Api.Api_SendMsg( 
             CurrentQQ,
@@ -28,12 +28,12 @@ if string.find(data.Content, "真彩色") then --发送真彩色获取风云4A�
                 voiceBase64Buf = "",
                 picUrl = "http://image.nmc.cn/" ..image.dataList[1].imgPath.. "", --从中央气象台的image站获取最后的图像
                 picBase64Buf = "",
-				        fileMd5 = ""
+		fileMd5 = ""
             }
         )
-		    html = nil
+	html = nil
         str = nil
-			  image = nil
-  end
+	image = nil
+    end
     return 1
 end
